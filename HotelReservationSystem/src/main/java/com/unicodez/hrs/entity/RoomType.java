@@ -33,6 +33,5 @@ public class RoomType {
 		this.roomTypeName = roomTypeName;
 	}
 	
-	
 
 }

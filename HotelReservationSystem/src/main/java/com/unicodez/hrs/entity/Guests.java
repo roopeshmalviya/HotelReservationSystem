@@ -1,12 +1,9 @@
 package com.unicodez.hrs.entity;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -28,10 +25,11 @@ public class Guests {
 	private String gHomePhoneNo;
 	private String gEmail;
 	private String gGender;
+	private String gPassword;
 	
-	@OneToOne(targetEntity = Reservation.class, cascade = CascadeType.ALL)
-	@JoinColumn(name = "gr_fk", referencedColumnName = "reservationId")
-	private Reservation reservation;
+//	@OneToOne(targetEntity = Reservation.class, cascade = CascadeType.ALL)
+//	@JoinColumn(name = "gr_fk", referencedColumnName = "reservationId")
+//	private Reservation reservation;
 	
 	
 	public Guests() {
@@ -115,11 +113,19 @@ public class Guests {
 	public void setgGender(String gGender) {
 		this.gGender = gGender;
 	}
-	public Reservation getReservation() {
-		return reservation;
+	public String getgPassword() {
+		return gPassword;
 	}
-	public void setReservation(Reservation reservation) {
-		this.reservation = reservation;
+	public void setgPassword(String gPassword) {
+		this.gPassword = gPassword;
 	}
+	
+	
+//	public Reservation getReservation() {
+//		return reservation;
+//	}
+//	public void setReservation(Reservation reservation) {
+//		this.reservation = reservation;
+//	}
 		
 }
